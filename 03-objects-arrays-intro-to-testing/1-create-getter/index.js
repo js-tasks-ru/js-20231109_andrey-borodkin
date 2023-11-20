@@ -7,14 +7,15 @@ export function createGetter(path) {
   const pathArray = path.split(".");
     
   return getter = (obj) => {
-
+    let result = obj;
+    
     for (const key of pathArray) {
-      if (typeof obj === 'object' && Object.hasOwn(obj, key)) {
-        obj = obj[key];
+      if (typeof result === 'object' && Object.hasOwn(result, key)) {
+        result = result[key];
       } else {
         return;
       }
     }
-    return obj;
+    return result;
   };
 }
