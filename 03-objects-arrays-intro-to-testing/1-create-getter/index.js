@@ -13,7 +13,7 @@ export function createGetter(path) {
       if (tempObj && tempObj.hasOwnProperty(key)) {
         tempObj = tempObj[key];
       } else {
-        return undefined;
+        return;
       }
     }
     return tempObj;
