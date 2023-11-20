@@ -9,7 +9,7 @@ export function createGetter(path) {
   return getter = (obj) => {
 
     for (const key of pathArray) {
-      if (Object.hasOwn(obj, key)) {
+      if (typeof obj === 'object' && Object.hasOwn(obj, key)) {
         obj = obj[key];
       } else {
         return;
