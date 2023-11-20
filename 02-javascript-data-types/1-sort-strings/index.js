@@ -8,12 +8,10 @@
 const LOCALE = ['ru', 'en'];
 const OPTIONS = {caseFirst: 'upper'};
 
-const ascendingSorting = (arr) => arr.sort((a, b) => a.localeCompare(b, LOCALE, OPTIONS));
-const descendingSorting = (arr) => arr.sort((a, b) => b.localeCompare(a, LOCALE, OPTIONS));
+const sortAsc = (a, b) => a.localeCompare(b, LOCALE, OPTIONS);
+const sortDesc = (a, b) => b.localeCompare(a, LOCALE, OPTIONS);
 
 export function sortStrings(arr, param = 'asc') {
-  const newArray = [...arr];
 
-  return param === 'asc' ? ascendingSorting(newArray) : descendingSorting(newArray);
-
+  return [...arr].sort(param === 'asc' ? sortAsc : sortDesc);
 }

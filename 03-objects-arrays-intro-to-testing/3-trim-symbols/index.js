@@ -27,22 +27,3 @@ export function trimSymbols(string, size) {
   }
   return tempArray.join("");
 }
-
-// create object {x: 4, a:6} -> if obj[a] > size, then obj[a] = size - > obj.valuse. toString
-
-// export function trimSymbols(string, size) {
-
-//   let tempObj = {};
-
-//   for (const letter of string) {
-//     tempObj[letter]++;
-//   }
-  
-//   for (let key in tempObj) {
-//     if (tempObj[key] > size) {
-//       tempObj[key] = size;
-//     }
-//   }
-     
-//   return Object.values.toString();
-// }
