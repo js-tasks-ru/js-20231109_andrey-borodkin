@@ -38,7 +38,7 @@ export default class NotificationMessage {
       const element = document.createElement('div');
       element.innerHTML = template;
 
-      return element;
+      return element.firstElementChild;
     }
 
     show(target = document.body) {
@@ -57,11 +57,11 @@ export default class NotificationMessage {
 
 
     destroy() {
-        clearTimeout(this.timer)
+      clearTimeout(this.timer);
       this.remove();
 
       if (NotificationMessage.currentNotification === this) {
-        NotificationMessage.currentNotification = null
+        NotificationMessage.currentNotification = null;
       }
     }
 
